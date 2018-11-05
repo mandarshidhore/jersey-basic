@@ -1,2 +1,2 @@
-# jersey-basic
-jersey basic app
+# jersey-basic-rest
+jersey basic rest app
