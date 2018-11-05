@@ -1,2 +1,2 @@
-# jersey-basic-rest
-jersey basic rest app
+# jersey-basic-rest-mysql
+jersey basic rest mysql app
