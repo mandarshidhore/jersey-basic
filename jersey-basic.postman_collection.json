@@ -1,0 +1,300 @@
+{
+	"info": {
+		"_postman_id": "fe4fe402-a684-466d-9c95-4cf4497440fe",
+		"name": "jersey-basic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Athlete",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/jersey-basic/webapi/myresource/getAthlete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jersey-basic",
+						"webapi",
+						"myresource",
+						"getAthlete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Athletes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/jersey-basic/webapi/myresource/getAllAthletes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jersey-basic",
+						"webapi",
+						"myresource",
+						"getAllAthletes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Athlete",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<athlete>\n    <age>30</age>\n    <name>Athlete 3</name>\n</athlete>"
+				},
+				"url": {
+					"raw": "http://localhost:8080/jersey-basic/webapi/myresource/addAthlete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jersey-basic",
+						"webapi",
+						"myresource",
+						"addAthlete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Athelete by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/jersey-basic/webapi/myresource/getAthlete/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jersey-basic",
+						"webapi",
+						"myresource",
+						"getAthlete",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Uri Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/jersey-basic/webapi/getInfo/getURIData/name/yoda",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jersey-basic",
+						"webapi",
+						"getInfo",
+						"getURIData",
+						"name",
+						"yoda"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Header Data",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "H1",
+						"value": "V1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/jersey-basic/webapi/getInfo/getHeaderData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jersey-basic",
+						"webapi",
+						"getInfo",
+						"getHeaderData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Athlete SubResource",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/jersey-basic/webapi/myresource/getAthlete/sub/9/mandar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jersey-basic",
+						"webapi",
+						"myresource",
+						"getAthlete",
+						"sub",
+						"9",
+						"mandar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Exception",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/jersey-basic/webapi/myresource/throwexception",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jersey-basic",
+						"webapi",
+						"myresource",
+						"throwexception"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generic Exception",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/jersey-basic/webapi/myresource/invalidurl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jersey-basic",
+						"webapi",
+						"myresource",
+						"invalidurl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Athlete In Response Object",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/jersey-basic/webapi/myresource/getAthleteInResponseObject",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jersey-basic",
+						"webapi",
+						"myresource",
+						"getAthleteInResponseObject"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

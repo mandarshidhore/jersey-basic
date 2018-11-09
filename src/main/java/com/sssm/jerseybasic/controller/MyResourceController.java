@@ -1,5 +1,6 @@
 package com.sssm.jerseybasic.controller;
 
+import java.net.URI;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -8,9 +9,14 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
+import javax.ws.rs.core.Response.Status;
 
 import com.sssm.jerseybasic.dao.AthleteRepo;
+import com.sssm.jerseybasic.exception.DataNotFoundException;
 import com.sssm.jerseybasic.model.Athlete;
 
 /**
@@ -41,6 +47,21 @@ public class MyResourceController {
 		athlete.setAge(10);
 		athlete.setName("Athlete 1");
 		return athlete;
+	}
+	
+	// return Response object that returns status and created object as entity.
+	@GET
+	@Path("getAthleteInResponseObject")
+	public Response getAthleteInResponseObject(@Context UriInfo uriInfo) {
+		Athlete athlete = new Athlete();
+		athlete.setAge(10);
+		athlete.setName("Athlete 1");
+		// below is one way of returning response
+		// return Response.status(Status.CREATED).entity(athlete).build();
+
+		// other way of returning response is using UriInfo object to get location
+		URI uri = uriInfo.getAbsolutePathBuilder().path("Athlete 1").build();
+		return Response.created(uri).entity(athlete).build();
 	}
 
 	@GET
@@ -79,6 +100,19 @@ public class MyResourceController {
 	public Athlete addAthlete(Athlete a) {
 		System.out.println(a.toString());
 		return a;
+	}
+	
+	// redirect to sub resource controller
+	@Path("getAthlete/sub/{subid}")
+	public MyResourceSubController getAthleteSub() {
+		return new MyResourceSubController();
+	}
+	
+	// demonstrate exception handling
+	@GET
+	@Path("/throwexception")
+	public String getException() {
+		throw new DataNotFoundException("Throwing DataNotFoundException...");
 	}
 
 }
